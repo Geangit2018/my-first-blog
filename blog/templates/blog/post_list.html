@@ -1,6 +1,5 @@
 {% load static %}
 <html>
-
  <head>
     <title>olá a meu blog</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -8,29 +7,18 @@
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
  </head>
 
-    <body>
+ <body>
      <div>
-
       <h1> <a href="/"> blog do djangogirls</a>  </h1>
-
-     </div>
-    { for post in post %}
-     <div>
-      <p>publicado: 17.01.2023, 11:14</p>
-      <h2> <a href="meu primeiro post"></a> </h2>
-      <p>qualquer coisa digitada por aqui</p>
      </div>
 
-     <div>
-
-      <p> publicado: 17.01.2023, 11:46</p>
-      <h2> <a href="">meu segundo post </a></h2>
-      <p>mais um texto sendo escrito por aqui em baixo</p>
-
+    {% for post in post %}
+      <div>
+          <p>published: {{ post.published_date}}</p>
+          <h2> <a href="">{{post.title}}</a> </h2>
+          <p>post.text|linebreaksbr}}</p>
       </div>
-    {% endfor %}
 
+    {% endfor %}
     </body>
 </html>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
